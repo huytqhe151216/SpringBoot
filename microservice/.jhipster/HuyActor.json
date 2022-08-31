@@ -1,0 +1,40 @@
+{
+  "name": "HuyActor",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dob",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "nationality",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "huyMovie",
+      "otherEntityRelationshipName": "actor",
+      "relationshipName": "movie",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "huy_actor",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "microservice",
+  "clientRootFolder": "microservice",
+  "databaseType": "sql",
+  "changelogDate": "20220831035758"
+}

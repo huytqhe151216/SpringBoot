@@ -1,0 +1,34 @@
+{
+    "name": "HuyGenre",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "huyMovie",
+            "otherEntityRelationshipName": "genre",
+            "relationshipName": "movie",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20220827064900",
+    "entityTableName": "huy_genre",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

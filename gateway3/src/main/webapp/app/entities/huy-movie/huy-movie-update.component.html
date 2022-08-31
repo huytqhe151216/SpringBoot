@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-huy-movie-heading">Create or edit a Huy Movie</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                    <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_director">Director</label>
+                    <input type="text" class="form-control" name="director" id="field_director"
+                           formControlName="director"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_country">Country</label>
+                    <input type="text" class="form-control" name="country" id="field_country"
+                           formControlName="country"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_writer">Writer</label>
+                    <input type="text" class="form-control" name="writer" id="field_writer"
+                           formControlName="writer"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_duration">Duration</label>
+                    <input type="number" class="form-control" name="duration" id="field_duration"
+                           formControlName="duration"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_publishDate">Publish Date</label>
+                    <div class="d-flex">
+                        <input id="field_publishDate" type="datetime-local" class="form-control" name="publishDate" formControlName="publishDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contentSummary">Content Summary</label>
+                    <input type="text" class="form-control" name="contentSummary" id="field_contentSummary"
+                           formControlName="contentSummary"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="field_genres">Genre</label>
+                    <select class="form-control" id="field_genres" multiple name="genres" formControlName="genres">
+                        <option [ngValue]="getSelected(editForm.get('genres')!.value, huyGenreOption)" *ngFor="let huyGenreOption of huygenres; trackBy: trackById">{{ huyGenreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="field_actors">Actor</label>
+                    <select class="form-control" id="field_actors" multiple name="actors" formControlName="actors">
+                        <option [ngValue]="getSelected(editForm.get('actors')!.value, huyActorOption)" *ngFor="let huyActorOption of huyactors; trackBy: trackById">{{ huyActorOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

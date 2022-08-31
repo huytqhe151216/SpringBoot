@@ -1,0 +1,71 @@
+{
+    "name": "HuyMovie",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "director",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "writer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "Duration"
+        },
+        {
+            "fieldName": "publishDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "contentSummary",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "huyRate",
+            "otherEntityRelationshipName": "movie",
+            "relationshipName": "huyRate"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "huyGenre",
+            "otherEntityRelationshipName": "movie",
+            "relationshipName": "genre",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "huyActor",
+            "otherEntityRelationshipName": "movie",
+            "relationshipName": "actor",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20220826015800",
+    "entityTableName": "huy_movie",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

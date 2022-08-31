@@ -1,0 +1,29 @@
+entity HuyMovie {
+	name String required
+    director String
+    country String
+    writer String
+    duration Duration
+    publishDate Instant
+    contentSummary String
+}
+entity HuyGenre{
+    name String required unique
+}
+entity HuyActor{
+    name String required
+    dob Instant
+    nationality String
+}
+entity HuyRate{
+    star Integer min(1) max(5) required
+    content String
+    dateCreate Instant
+}
+relationship ManyToMany {
+	HuyMovie{genre} to HuyGenre{movie}
+	HuyMovie{actor} to HuyActor{movie}
+}
+relationship OneToMany{
+    HuyMovie to HuyRate{movie}
+}

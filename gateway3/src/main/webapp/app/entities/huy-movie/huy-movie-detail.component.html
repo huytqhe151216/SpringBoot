@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="huyMovie">
+            <h2><span>Huy Movie</span> {{ huyMovie.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{ huyMovie.name }}</span>
+                </dd>
+                <dt><span>Director</span></dt>
+                <dd>
+                    <span>{{ huyMovie.director }}</span>
+                </dd>
+                <dt><span>Country</span></dt>
+                <dd>
+                    <span>{{ huyMovie.country }}</span>
+                </dd>
+                <dt><span>Writer</span></dt>
+                <dd>
+                    <span>{{ huyMovie.writer }}</span>
+                </dd>
+                <dt><span>Duration</span></dt>
+                <dd>
+                    <span>{{ huyMovie.duration }}</span>
+                </dd>
+                <dt><span>Publish Date</span></dt>
+                <dd>
+                    <span>{{ huyMovie.publishDate }}</span>
+                </dd>
+                <dt><span>Content Summary</span></dt>
+                <dd>
+                    <span>{{ huyMovie.contentSummary }}</span>
+                </dd>
+                <dt><span>Genre</span></dt>
+                <dd>
+                    <span *ngFor="let genre of huyMovie.genres; let last = last">
+                        <a [routerLink]="['/huy-genre', genre?.id, 'view']">{{ genre.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span>Actor</span></dt>
+                <dd>
+                    <span *ngFor="let actor of huyMovie.actors; let last = last">
+                        <a [routerLink]="['/huy-actor', actor?.id, 'view']">{{ actor.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/huy-movie', huyMovie.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

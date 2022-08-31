@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "img",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20220827030410",
+    "dto": "no",
+    "searchEngine": "elasticsearch",
+    "service": "no",
+    "entityTableName": "demoblob",
+    "databaseType": "sql",
+    "readOnly": true,
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

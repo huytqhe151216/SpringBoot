@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.mycompany.myapp"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "gateway",
+    "baseName": "gateway3",
+    "packageName": "com.mycompany.myapp",
+    "packageFolder": "com/mycompany/myapp",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "oracle",
+    "prodDatabaseType": "oracle",
+    "searchEngine": "elasticsearch",
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YTQwNWUzZTUxZGZjYjQ2NzM4OGZmOWM2NWE4ZDI5NDJmNDM3Mzk2NWQyOTIzZDBjZjBjZmQ1ZTg5ZWFmYTg0OTliMzUwMDEyMWVlMzI3MWI0YTUzYzgwZDY4YjEyZGExODBiOWFlNjljN2Y5YjQyMzA3NDliNDUxNWZjMDBjNTc=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1661421646314,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}

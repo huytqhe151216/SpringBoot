@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity HuyMovie.
+    -->
+    <changeSet id="20220826015800-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="huy_movie_id"
+                                 baseTableName="huy_movie_genre"
+                                 constraintName="huy_movie_genr_huy_movie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="huy_movie"/>
+
+        <addForeignKeyConstraint baseColumnNames="genre_id"
+                                 baseTableName="huy_movie_genre"
+                                 constraintName="fk_huy_movie_genre_genre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="huy_genre"/>
+        
+        <addForeignKeyConstraint baseColumnNames="huy_movie_id"
+                                 baseTableName="huy_movie_actor"
+                                 constraintName="huy_movie_acto_huy_movie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="huy_movie"/>
+
+        <addForeignKeyConstraint baseColumnNames="actor_id"
+                                 baseTableName="huy_movie_actor"
+                                 constraintName="fk_huy_movie_actor_actor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="huy_actor"/>
+        
+    </changeSet>
+</databaseChangeLog>

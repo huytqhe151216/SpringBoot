@@ -1,0 +1,41 @@
+{
+    "name": "HuyActor",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dob",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "nationality",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "huyMovie",
+            "otherEntityRelationshipName": "actor",
+            "relationshipName": "movie",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20220827065000",
+    "entityTableName": "huy_actor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

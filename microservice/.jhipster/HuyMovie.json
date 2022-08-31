@@ -1,0 +1,69 @@
+{
+  "name": "HuyMovie",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "director",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "writer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "duration",
+      "fieldType": "Duration"
+    },
+    {
+      "fieldName": "publishDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "contentSummary",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "huyRate",
+      "otherEntityRelationshipName": "movie",
+      "relationshipName": "huyRate"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "huyGenre",
+      "otherEntityRelationshipName": "movie",
+      "relationshipName": "genre",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "huyActor",
+      "otherEntityRelationshipName": "movie",
+      "relationshipName": "actor",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "huy_movie",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "microservice",
+  "clientRootFolder": "microservice",
+  "databaseType": "sql",
+  "changelogDate": "20220831035756"
+}
